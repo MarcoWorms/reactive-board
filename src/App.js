@@ -32,10 +32,8 @@ class App extends Component {
   render() {
     return (
       <Board 
-        width="8"
-        height="8"
         cellSize="50"
-        board={ this.props.board } 
+        board={ this.props.board }
         onClick={ (...args) => this.props.dispatch({
           type: 'CLICKED',
           payload: {...args}
@@ -46,5 +44,3 @@ class App extends Component {
 }
 
 const Root = connect(store => store)(App)
-
-

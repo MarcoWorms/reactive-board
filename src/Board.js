@@ -26,6 +26,7 @@ class Board extends Component {
         width: cellSize + 'px',
         height: cellSize + 'px',
         fontSize: cellSize + 'px',
+        lineHeight: '100%',
         border: 'solid 1px white'
       }
     }
@@ -34,10 +35,10 @@ class Board extends Component {
       const { board } = this.props
       return (
         <div style={ this.boardStyle(this.props) }>
-          {board.map((row, y) => 
-            row.map((value, x) => 
-              <div 
-                style={ this.cellStyle(this.props) } 
+          {board.map((row, y) =>
+            row.map((value, x) =>
+              <div
+                style={ this.cellStyle(this.props) }
                 onClick={ this.props.onClick.bind(null, x, y, value) }
                 key={ '' + x + y }
               >
@@ -45,7 +46,7 @@ class Board extends Component {
               </div>
           ))}
         </div>
-      )    
+      )
     }
 }
 
